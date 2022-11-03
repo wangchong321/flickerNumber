@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "UILabel+FlickerNumber.h"
 
 @interface ViewController ()
 
@@ -15,8 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupUI];
 }
 
+- (void)setupUI {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 300, 100)];
+    [label dd_setNumber:@500 duration:3];
+    [self.view addSubview: label];
+}
 
 @end
